@@ -13,42 +13,59 @@
         from pesky crawlers and bots!
       </p>
 
-      <form action="script.php" method="POST">
-        <label for="text">Text:</label>
-        <input type="text" id="text" name="text" value="example@email.com" />
-        <div class="color-field">
-          <label for="bg-color">Background color:</label>
-          <input type="color" id="bg-color" name="bg-color" value="#000000" />
-          <input
-            type="text"
-            id="bg-hex"
-            value="#000000"
-            placeholder="#000000"
-          />
-        </div>
-        <div class="color-field">
-          <label for="text-color">Text color:</label>
-          <input
-            type="color"
-            id="text-color"
-            name="text-color"
-            value="#ffffff"
-          />
-          <input
-            type="text"
-            id="text-hex"
-            value="#ffffff"
-            placeholder="#ffffff"
-          />
-        </div>
-      </form>
+      <section>
+        <form action="script.php" method="POST">
+          <label for="text">Text:</label>
+          <input type="text" id="text" name="text" value="example@email.com" />
+          <div class="color-field">
+            <label for="bg-color">Background color:</label>
+            <input type="color" id="bg-color" name="bg-color" value="#000000" />
+            <input
+              type="text"
+              id="bg-hex"
+              value="#000000"
+              placeholder="#000000"
+            />
+          </div>
+          <div class="color-field">
+            <label for="text-color">Text color:</label>
+            <input
+              type="color"
+              id="text-color"
+              name="text-color"
+              value="#ffffff"
+            />
+            <input
+              type="text"
+              id="text-hex"
+              value="#ffffff"
+              placeholder="#ffffff"
+            />
+          </div>
+        </form>
 
-      <p class="image-label">Image:</p>
-      <img id="image" src="" alt="Image output" />
+        <p class="image-label">Image:</p>
+        <img id="image" src="" alt="Image output" />
+      </section>
+
+      <hr />
+
+      <section>
+        <p class="subtitle">
+          Based on DaftLogic's
+          <a href="https://www.daftlogic.com/projects-email-to-image.htm"
+            >Email to Image</a
+          >
+          tool. Extended with Docker deployment, live preview, custom colours,
+          and general text input support.
+        </p>
+      </section>
+
       <footer>
         <p>&copy; 2026 Tony Kuosa</p>
       </footer>
     </main>
+
     <script>
       function syncColorInputs(colorId, hexId) {
         const picker = document.getElementById(colorId)
