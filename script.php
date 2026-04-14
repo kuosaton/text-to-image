@@ -1,7 +1,7 @@
 <?php
 header("Content-type: image/png");
 
-$string = isset($_GET['text']) ? $_GET['text'] : "No Data";
+$string = isset($_GET['text']) && $_GET['text'] !== '' ? $_GET['text'] : 'No Data';
 $bg = isset($_GET['bg-color']) ? $_GET['bg-color'] : '#000000';
 $bg = ltrim($bg, '#');
 
