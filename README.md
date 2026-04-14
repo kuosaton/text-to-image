@@ -14,4 +14,4 @@ image preview, custom color inputs, and general text input support.
 
 ## Usage
 
-Clone this repository and run `docker compose up` in the repository root.
+Clone this repository and run `docker compose up` in the repository root. When ready, you can use the tool at [http://localhost:8080/](http://localhost:8080/) on your browser.
