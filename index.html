@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <title>Text to image tool</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <main>
+      <h1>Text to image tool</h1>
+      <p class="subtitle">Convert text to a PNG image with custom colors</p>
+      <p class="subtitle">
+        Usage idea: display your email address on a website while obfuscating it
+        from pesky crawlers and bots!
+      </p>
+
+      <form action="script.php" method="POST">
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text" value="example@email.com" />
+        <div class="color-field">
+          <label for="bg-color">Background color:</label>
+          <input type="color" id="bg-color" name="bg-color" value="#000000" />
+          <input
+            type="text"
+            id="bg-hex"
+            value="#000000"
+            placeholder="#000000"
+          />
+        </div>
+        <div class="color-field">
+          <label for="text-color">Text color:</label>
+          <input
+            type="color"
+            id="text-color"
+            name="text-color"
+            value="#ffffff"
+          />
+          <input
+            type="text"
+            id="text-hex"
+            value="#ffffff"
+            placeholder="#ffffff"
+          />
+        </div>
+      </form>
+
+      <p class="image-label">Image:</p>
+      <img id="image" src="" alt="Image output" />
+      <footer>
+        <p>&copy; 2026 Tony Kuosa</p>
+      </footer>
+    </main>
+    <script>
+      function syncColorInputs(colorId, hexId) {
+        const picker = document.getElementById(colorId)
+        const hex = document.getElementById(hexId)
+
+        picker.addEventListener('input', () => {
+          hex.value = picker.value
+          updateImage()
+        })
+
+        hex.addEventListener('input', () => {
+          if (/^#[0-9a-fA-F]{6}$/.test(hex.value)) {
+            picker.value = hex.value
+            updateImage()
+          }
+        })
+      }
+
+      function updateImage() {
+        const text = document.getElementById('text').value
+        const bg = document.getElementById('bg-color').value.substring(1)
+        const fg = document.getElementById('text-color').value.substring(1)
+        document.getElementById('image').src =
+          `script.php?text=${encodeURIComponent(text)}&bg-color=${bg}&text-color=${fg}`
+      }
+
+      syncColorInputs('bg-color', 'bg-hex')
+      syncColorInputs('text-color', 'text-hex')
+
+      document.querySelectorAll('input').forEach((input) => {
+        input.addEventListener('input', updateImage)
+      })
+
+      updateImage()
+    </script>
+  </body>
+</html>
