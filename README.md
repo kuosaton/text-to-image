@@ -18,7 +18,7 @@ A live version of this tool is available at [https://text-to-image.tonykuosa.com
 
 ### Use locally with Docker
 
-Prerequisite: [Docker Compose](https://docs.docker.com/compose/install/)
+Prerequisite: [Docker](https://docs.docker.com/get-started/get-docker/)
 
 - Clone this repository and run `docker compose up` in the repository root.
 - Once ready, you can use the tool at [http://localhost:8080/](http://localhost:8080/) on your browser.
