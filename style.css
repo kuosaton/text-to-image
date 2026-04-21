@@ -57,6 +57,16 @@ h1 {
   margin-bottom: var(--space-md);
 }
 
+.subtitle--md {
+  font-size: var(--text-md);
+  margin-bottom: var(--space-md);
+}
+
+.subtitle--sm {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+}
+
 section {
   margin-bottom: var(--space-lg);
 }
